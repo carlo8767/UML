@@ -1,0 +1,15 @@
+@startuml
+
+actor Customer as customer
+actor Controller_Rest as api
+actor Service as service
+database SQL as sql
+group Authentication Request [Retrieve Data]
+customer -> api:  GET REQUEST
+api -> service: CREATE QUERY 
+service -> sql: RETRIEVE INFO
+sql --> service: SERIALIZATION ENTITY AND MODEL
+service --> api: RETURN MODEL ANSWER
+api --> customer: RETURN ANSWER
+end
+@enduml
