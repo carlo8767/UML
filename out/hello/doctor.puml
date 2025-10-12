@@ -1,0 +1,30 @@
+
+@startuml
+left to right direction
+package Stakeholders {
+actor AgeConcernRepresentive as ac
+actor GovernmentHealtCommitte as ghc
+actor SystemDeveloper as sd
+}
+package Requirement {
+usecase REQ1 as "The system should call the emergency if the patient's condition
+are under the safe level defined by the patient's doctor"
+usecase REQ2 as "The patient's personal details shall be readable only by its
+personal medic, with an exception in case of critical condition"
+usecase REQ3 as "The system shall allow at the patience to update its personal
+details"
+usecase REQ4 as "The system shall allow at the patience to read the informaiton
+related at its diet details"
+usecase REQ5 as "The system shall communicate the report related to the food
+connsumption one time a week"
+usecase REQ6 as "The system shall verify the liquid consumption every 30 minutes"
+}
+
+ac --> REQ1
+ac --> REQ2
+ghc --> REQ3
+ghc --> REQ4
+sd --> REQ5
+sd --> REQ6
+@enduml
+
